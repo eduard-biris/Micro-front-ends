@@ -11,16 +11,9 @@ module.exports = {
     module: {
         rules: [
             {
-            test: /\.(js|jsx)?$/,
+            test: /\.(js|jsx|ts|tsx)?$/,
             exclude: /node_modules/,
-            use: [
-                {
-                loader: "babel-loader",
-                options: {
-                    presets: ["@babel/preset-env", "@babel/preset-react"],
-                },
-                },
-            ],
+            loader: 'ts-loader',
             },
             {
                 test: /\.css$/i,
@@ -37,7 +30,10 @@ module.exports = {
             name: "MicroFrontendsApp",
             filename: "remoteEntry.js",
             exposes: {
-              "./Button": "./src/App",
+              "./Dialogs/ErrorDialog": "./src/components/dialog/exports/ErrorDialog.tsx",
+              "./Dialogs/AddProjectDialog": "./src/components/dialog/exports/AddProjectDialog.tsx",
+              "./Dialogs/DeleteProjectDialog": "./src/components/dialog/exports/DeleteProjectDialog.tsx",
+              "./Dialogs/DeleteIllustrationDialog": "./src/components/dialog/exports/DeleteIllustrationDialog.tsx",
             },
             shared: {
               ...dependencies,
@@ -53,7 +49,7 @@ module.exports = {
           }),
     ],
     resolve: {
-        extensions: [".js", ".jsx"],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
     },
     target: "web",
 };

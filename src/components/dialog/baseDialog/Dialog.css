@@ -1,0 +1,28 @@
+.dialog {
+    width: fit-content;
+    min-width: 50vw;
+    height: fit-content;
+    min-height: 20vh;
+
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px lightgray;
+}
+
+.content {
+    width: 100%;
+    height: 80%;
+    text-align: center;
+}
+
+.content > h1 {
+    font-weight: normal;
+}
+
+.buttonsBar {
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    justify-content: end;
+}
