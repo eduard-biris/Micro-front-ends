@@ -51,11 +51,11 @@ function App() {
       <FormDialog
         showDialog={showFormDialog}
         fields={[
-          { type: 'text', label: 'Project Name' },
-          { type: 'text', label: 'Project Description' },
-          { type: 'upload', label: 'file' }
+          { type: 'text', id: 'projectName', label: 'Project Name' },
+          { type: 'text', id: 'projectDescription', label: 'Project Description' },
+          { type: 'upload', id:'projectFile', label: 'file' }
         ]}
-        onConfirm={() => {setShowFormDialog(false)}}
+        onConfirm={(values) => {console.log('values: ', values); setShowFormDialog(false)}}
         onCancel={() => {setShowFormDialog(false)}}
       />
 

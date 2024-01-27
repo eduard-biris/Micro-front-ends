@@ -34,6 +34,7 @@ module.exports = {
               "./Dialogs/AddProjectDialog": "./src/components/dialog/exports/AddProjectDialog.tsx",
               "./Dialogs/DeleteProjectDialog": "./src/components/dialog/exports/DeleteProjectDialog.tsx",
               "./Dialogs/DeleteIllustrationDialog": "./src/components/dialog/exports/DeleteIllustrationDialog.tsx",
+              "./Dialogs/FormDialog": "./src/components/dialog/formDialog/FormDialog.tsx",
             },
             shared: {
               ...dependencies,
