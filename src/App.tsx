@@ -2,6 +2,8 @@ import React from 'react';
 
 import TimelineView from './components/illustry/timeline/Timeline';
 
+import './index.css';
+
 const data = {
   "2023-10-07": {
     "summary": {
