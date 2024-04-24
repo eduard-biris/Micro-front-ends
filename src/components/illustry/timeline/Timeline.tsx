@@ -97,4 +97,41 @@ const TimelineView = ({
   );
 };
 
-export default TimelineView;
+const ExportedComponents = {
+  TestComponentOne: ({ type, data }) => {
+    return (
+      <>
+        Test component 1
+      </>
+    )
+  },
+
+  TestComponentTwo: ({ type, data }) => {
+    return (
+      <>
+        Test component 2
+      </>
+    )
+  },
+
+  TimelineView,
+}
+
+const Component = ({ type, data }) => {
+  console.log('Type in mf: ', type);
+  const ComponentToRender = ExportedComponents[type] ?? (() => <>Unkown component</>);
+
+  return (
+    <>
+      Hello World
+
+      <ComponentToRender data={data} />
+{/* 
+      { type == 'one'  && <TestComponentOne data={data}/>}
+      { type == 'two' && <TestComponentTwo data={data}/>}
+      { type == 'TimelineView' && <TimelineView data={data} /> } */}
+    </>
+  )
+};
+
+export default Component;

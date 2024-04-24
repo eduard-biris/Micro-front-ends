@@ -53,6 +53,7 @@
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.4.38",
+    "postcss-loader": "^8.1.1",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
     "webpack": "^5.75.0",

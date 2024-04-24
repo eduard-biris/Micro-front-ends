@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 
-import TimelineView from './components/illustry/timeline/Timeline';
+// import TimelineView from './components/illustry/timeline/Timeline';
+const TimelineView = lazy(() => import('loop/Timelines/TimelineView'));
 
 import './index.css';
 
@@ -104,7 +105,9 @@ const data = {
 function App() {
   return (
     <div>
-      <TimelineView data={data} options={true} legend={true} />
+      <Suspense fallback={'Loading...'}>
+        <TimelineView data={data} options={true} legend={true} />
+      </Suspense>
     </div>
   )
 }
