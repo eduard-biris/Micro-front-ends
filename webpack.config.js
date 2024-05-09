@@ -11,13 +11,13 @@ module.exports = {
     module: {
         rules: [
             {
-            test: /\.(js|jsx|ts|tsx)?$/,
-            exclude: /node_modules/,
-            loader: 'ts-loader',
+              test: /\.(js|jsx|ts|tsx)?$/,
+              exclude: /node_modules/,
+              loader: 'ts-loader',
             },
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader"],
             },
         ],
     },
@@ -30,11 +30,16 @@ module.exports = {
             name: "MicroFrontendsApp",
             filename: "remoteEntry.js",
             exposes: {
+              "./SupportedTypes": "./src/supportedTypes.js",
               "./Dialogs/ErrorDialog": "./src/components/dialog/exports/ErrorDialog.tsx",
               "./Dialogs/AddProjectDialog": "./src/components/dialog/exports/AddProjectDialog.tsx",
               "./Dialogs/DeleteProjectDialog": "./src/components/dialog/exports/DeleteProjectDialog.tsx",
               "./Dialogs/DeleteIllustrationDialog": "./src/components/dialog/exports/DeleteIllustrationDialog.tsx",
               "./Dialogs/FormDialog": "./src/components/dialog/formDialog/FormDialog.tsx",
+              "./Timelines/TimelineView": "./src/components/illustry/timeline/Timeline.tsx",
+            },
+            remotes: {
+              "loop": "MicroFrontendsApp@http://localhost:3001/remoteEntry.js",
             },
             shared: {
               ...dependencies,
