@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 
 // import TimelineView from './components/illustry/timeline/Timeline';
 const TimelineView = lazy(() => import('loop/Timelines/TimelineView'));
+const CalendarView = lazy(() => import('loop/CalendarView'));
 
 import './index.css';
 
@@ -102,11 +103,33 @@ const data = {
   }
 };
 
+const categories = [ '1', '2', '3', '5', '6', '7' ];
+const calendar = [
+  { date: '1939-09-02', value: 1, category: '1' },
+  { date: '1939-09-07', value: 1, category: '2' },
+  { date: '1939-09-17', value: 1, category: '3' },
+  { date: '1939-10-06', value: 1, category: '1' },
+  { date: '1939-10-07', value: 1, category: '1' },
+  { date: '1939-10-14', value: 1, category: '5' },
+  { date: '1939-10-17', value: 1, category: '1' },
+  { date: '1939-10-22', value: 1, category: '6' },
+  { date: '1939-10-28', value: 1, category: '1' },
+  { date: '1939-11-04', value: 1, category: '7' },
+  { date: '1939-11-28', value: 1, category: '3' },
+  { date: '1939-12-05', value: 1, category: '3' },
+  { date: '1939-12-11', value: 1, category: '2' },
+  { date: '1939-12-16', value: 1, category: '2' },
+  { date: '1939-12-23', value: 1, category: '1' }
+];
+const legend = true;
+const options = true;
+
 function App() {
   return (
     <div>
       <Suspense fallback={'Loading...'}>
-        <TimelineView data={data} options={true} legend={true} />
+        {/* <TimelineView data={data} options={true} legend={true} /> */}
+        <CalendarView categories={categories} calendar={calendar} legend={legend} options={options} />
       </Suspense>
     </div>
   )

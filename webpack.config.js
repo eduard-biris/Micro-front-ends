@@ -37,6 +37,7 @@ module.exports = {
               "./Dialogs/DeleteIllustrationDialog": "./src/components/dialog/exports/DeleteIllustrationDialog.tsx",
               "./Dialogs/FormDialog": "./src/components/dialog/formDialog/FormDialog.tsx",
               "./Timelines/TimelineView": "./src/components/illustry/timeline/Timeline.tsx",
+              "./CalendarView": "./src/components/illustry/calendar/Calendar.tsx",
             },
             remotes: {
               "loop": "MicroFrontendsApp@http://localhost:3001/remoteEntry.js",
