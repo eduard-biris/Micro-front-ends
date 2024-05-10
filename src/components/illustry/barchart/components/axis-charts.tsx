@@ -7,7 +7,7 @@ import {
   constructSeries
 } from '../helper/helper';
 import { SeriesOption } from 'echarts';
-import { WithLegend, WithOptions } from '../../utils/utils';
+import { WithLegend, WithOptions } from '../../commons/types/types';
 import Legend from '../../commons/Legend';
 import ReactEcharts from '../../commons/echarts/echarts';
 

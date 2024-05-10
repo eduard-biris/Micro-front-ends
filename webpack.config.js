@@ -39,6 +39,7 @@ module.exports = {
               "./Timelines/TimelineView": "./src/components/illustry/timeline/Timeline.tsx",
               "./CalendarView": "./src/components/illustry/calendar/Calendar.tsx",
               "./BarchartView": "./src/components/illustry/barchart/Barchart.tsx",
+              "./PiechartView": "./src/components/illustry/piechart/Piechart.tsx",
             },
             remotes: {
               "loop": "MicroFrontendsApp@http://localhost:3001/remoteEntry.js",

@@ -8,7 +8,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import { formatDate } from './utils/utils';
 import { Button } from '../commons/Button';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
-import { WithLegend, WithOptions } from './types/types';
+import { WithLegend, WithOptions } from '../commons/types/types';
 import TimelineAccordion from './TimelineAccordion';
 import TimelineElement from './TimelineElement';
 
