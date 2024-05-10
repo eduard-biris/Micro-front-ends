@@ -6,7 +6,7 @@ import { TimelineData } from 'types/visualizations';
 import { VerticalTimeline } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { formatDate } from './utils/utils';
-import { Button } from './components/Button';
+import { Button } from '../commons/Button';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 import { WithLegend, WithOptions } from './types/types';
 import TimelineAccordion from './TimelineAccordion';
