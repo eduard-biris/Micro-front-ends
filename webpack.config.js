@@ -38,6 +38,7 @@ module.exports = {
               "./Dialogs/FormDialog": "./src/components/dialog/formDialog/FormDialog.tsx",
               "./Timelines/TimelineView": "./src/components/illustry/timeline/Timeline.tsx",
               "./CalendarView": "./src/components/illustry/calendar/Calendar.tsx",
+              "./BarchartView": "./src/components/illustry/barchart/Barchart.tsx",
             },
             remotes: {
               "loop": "MicroFrontendsApp@http://localhost:3001/remoteEntry.js",
