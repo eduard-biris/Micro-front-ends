@@ -1,7 +1,7 @@
 import { AxisChartData } from 'types/visualizations';
-import { WithLegend, WithOptions } from '../utils/utils';
+import { WithLegend, WithOptions } from '../commons/types/types';
 import React, { useState, lazy } from 'react';
-import { visualizationTypesEnum } from './validation/visualizations';
+import { visualizationTypesEnum } from '../commons/validation/visualizations';
 import CollapsableSearchBar from './components/collapsable-searchbar';
 
 interface FilteredAxisChartsShellProp extends WithLegend, WithOptions {

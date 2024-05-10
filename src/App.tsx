@@ -3,6 +3,7 @@ import React, { lazy, Suspense } from 'react';
 const TimelineView = lazy(() => import('loop/Timelines/TimelineView'));
 const CalendarView = lazy(() => import('loop/CalendarView'));
 const BarchartView = lazy(() => import('loop/BarchartView'));
+const PiechartView = lazy(() => import('loop/PiechartView'));
 
 import './index.css';
 
@@ -126,59 +127,72 @@ import './index.css';
 // const legend = true;
 // const options = true;
 
-// BarchartView mock props
+// ===== BarchartView mock props =====
+// const data = {
+//   "headers": [
+//     "Mon",
+//     "Tue",
+//     "Wed",
+//     "Thu",
+//     "Fri",
+//     "Sat",
+//     "Sun"
+//   ],
+//   "values": {
+//     "Statistic 1": [
+//       120,
+//       132,
+//       101,
+//       134,
+//       90,
+//       230,
+//       210
+//     ],
+//     "Statistic 2": [
+//       220,
+//       182,
+//       191,
+//       234,
+//       290,
+//       330,
+//       310
+//     ],
+//     "Statistic 3": [
+//       150,
+//       232,
+//       201,
+//       154,
+//       190,
+//       330,
+//       410
+//     ],
+//     "Statistic 4": [
+//       320,
+//       332,
+//       301,
+//       334,
+//       390,
+//       330,
+//       320
+//     ]
+//   }
+// };
+// const legend = true;
+// const options = true;
+// const type = 'bar';
+
+// ===== PiechartView mock props =====
 const data = {
-  "headers": [
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat",
-    "Sun"
-  ],
-  "values": {
-    "Statistic 1": [
-      120,
-      132,
-      101,
-      134,
-      90,
-      230,
-      210
-    ],
-    "Statistic 2": [
-      220,
-      182,
-      191,
-      234,
-      290,
-      330,
-      310
-    ],
-    "Statistic 3": [
-      150,
-      232,
-      201,
-      154,
-      190,
-      330,
-      410
-    ],
-    "Statistic 4": [
-      320,
-      332,
-      301,
-      334,
-      390,
-      330,
-      320
-    ]
+  values: {
+    'Statistic 1': 122,
+    'Statistic 2': 222,
+    'Statistic 3': 510,
+    'Statistic 4': 320
   }
 };
 const legend = true;
 const options = true;
-const type = 'bar';
+const filter = true;
 
 function App() {
   return (
@@ -186,7 +200,8 @@ function App() {
       <Suspense fallback={'Loading...'}>
         {/* <TimelineView data={data} options={true} legend={true} /> */}
         {/* <CalendarView categories={categories} calendar={calendar} legend={legend} options={options} /> */}
-        <BarchartView data={data} legend={legend} options={options} type={type} />
+        {/* <BarchartView data={data} legend={legend} options={options} type={type} /> */}
+        <PiechartView data={data} legend={legend} options={options} filter={filter} />
       </Suspense>
     </div>
   )
