@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -97,41 +96,43 @@ const TimelineView = ({
   );
 };
 
-const ExportedComponents = {
-  TestComponentOne: ({ type, data }) => {
-    return (
-      <>
-        Test component 1
-      </>
-    )
-  },
+export default TimelineView;
 
-  TestComponentTwo: ({ type, data }) => {
-    return (
-      <>
-        Test component 2
-      </>
-    )
-  },
+// const ExportedComponents = {
+//   TestComponentOne: ({ type, data }) => {
+//     return (
+//       <>
+//         Test component 1
+//       </>
+//     )
+//   },
 
-  TimelineView,
-}
+//   TestComponentTwo: ({ type, data }) => {
+//     return (
+//       <>
+//         Test component 2
+//       </>
+//     )
+//   },
 
-const Component = ({ type, data }) => {
-  console.log('Type in mf: ', type);
-  const ComponentToRender = ExportedComponents[type] ?? (() => <>Unkown component</>);
+//   TimelineView,
+// }
 
-  return (
-    <>
-      Hello World
+// const Component = ({ type, data }) => {
+//   console.log('Type in mf: ', type);
+//   const ComponentToRender = ExportedComponents[type] ?? (() => <>Unkown component</>);
 
-      <ComponentToRender data={data} />
-{/* 
-      { type == 'one'  && <TestComponentOne data={data}/>}
-      { type == 'two' && <TestComponentTwo data={data}/>}
-      { type == 'TimelineView' && <TimelineView data={data} /> } */}
-    </>
-  )
-};
+//   return (
+//     <>
+//       Hello World
 
-export default Component;
+//       <ComponentToRender data={data} />
+// {/* 
+//       { type == 'one'  && <TestComponentOne data={data}/>}
+//       { type == 'two' && <TestComponentTwo data={data}/>}
+//       { type == 'TimelineView' && <TimelineView data={data} /> } */}
+//     </>
+//   )
+// };
+
+// export default Component;
