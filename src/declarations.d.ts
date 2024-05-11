@@ -1,4 +1,5 @@
-declare module 'loop/Timelines/TimelineView';
-declare module 'loop/CalendarView';
-declare module 'loop/BarchartView';
-declare module 'loop/PiechartView';
+declare module 'loop/Illustry/TimelineView';
+declare module 'loop/Illustry/CalendarView';
+declare module 'loop/Illustry/BarchartView';
+declare module 'loop/Illustry/PiechartView';
+declare module 'loop/Illustry/WraperComponent';
