@@ -19,6 +19,8 @@ import { timelineWords } from '../../commons/filter/timeline';
 import { hierarchyWords } from '../../commons/filter/hierarchy';
 import { Button } from '../../commons/Button';
 
+import './collapsable-searchbar.css';
+
 interface CollapsableSearchBarProps<T> {
   data: T;
   setFilteredData: Dispatch<SetStateAction<T>>;
@@ -103,19 +105,36 @@ const CollapsableSearchBar = <
   return (
     <form
       action=""
-      className="relative mx-auto mt-[2%] w-max"
+      // className="relative mx-auto mt-[2%] w-max"
+      style={{
+        position: 'relative',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: '2%',
+        width: 'max-content'
+      }}
       onSubmit={handleSearch}
     >
-      <div className="flex items-center w-[75%] mx-auto">
+      <div 
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          width: '75%',
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}
+        // className="flex items-center w-[75%] mx-auto"
+      >
         <input
           type="search"
           value={searchValue}
           onChange={handleInputChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className={`peer relative z-10 h-12 w-12 cursor-pointer rounded-full border bg-transparent pl-12 outline-none transition-all duration-500 ${
-            isFocused || searchValue.trim() !== '' ? 'w-screen' : 'w-12'
-          } focus:border-lime-300 focus:pl-16 focus:pr-4`}
+          className={'peer custom-class'}
+          // className={`peer relative z-10 h-12 w-12 cursor-pointer rounded-full border bg-transparent pl-12 outline-none transition-all duration-500 ${
+          //   isFocused || searchValue.trim() !== '' ? 'w-screen' : 'w-12'
+          // } focus:border-lime-300 focus:pl-16 focus:pr-4`}
         />
         {isInputClicked && searchValue.trim() !== '' && (
           <Button
