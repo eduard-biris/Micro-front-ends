@@ -11,6 +11,8 @@ import { WithLegend, WithOptions } from '../commons/types/types';
 import TimelineAccordion from './TimelineAccordion';
 import TimelineElement from './TimelineElement';
 
+import './Timeline.css';
+
 interface TimelineProp extends WithLegend, WithOptions {
   data: TimelineData;
 }
@@ -45,7 +47,14 @@ const TimelineView = ({
   };
 
   return (
-    <div className="mt-[10%] mr-[20%]" ref={ref}>
+    <div
+      // className="mt-[10%] mr-[20%]"
+      style={{
+        marginTop: '10%',
+        marginRight: '20%',
+      }}
+      ref={ref}
+    >
       <VerticalTimeline
         layout="1-column-left"
         animate={true}
@@ -58,17 +67,32 @@ const TimelineView = ({
               inView={inView}
               key={date}
             >
-              <h3 className="vertical-timeline-element-title text-gray-700 dark:text-gray-400 text-center my-2 text-xm md:text-xl">
+              <h3 
+                // className="vertical-timeline-element-title text-gray-700 dark:text-gray-400 text-center my-2 text-xm md:text-xl">
+                className="vertical-timeline-element-title timeline-first-class"
+              >
                 {data[date]?.summary?.title}
               </h3>
-              <span className="capitalize font-medium text-gray-700 dark:text-gray-400 xs:text-sm">
+              <span
+                // className="capitalize font-medium text-gray-700 dark:text-gray-400 xs:text-sm"
+                className={'timeline-second-class'}
+              >
                 {formatDate(date)}
               </span>
               <TimelineAccordion data={data} date={date}></TimelineAccordion>
             </TimelineElement>
         ))}
       </VerticalTimeline>
-      <div className="flex justify-center mt-[5%] mb-[10%]">
+      <div 
+        // className="flex justify-center mt-[5%] mb-[10%]"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: '100%',
+          marginTop: '5%',
+          marginBottom: '10%'
+        }}
+      >
         <Button
           suppressHydrationWarning
           aria-label="Go to previous page"
@@ -78,7 +102,14 @@ const TimelineView = ({
           onClick={handlePreviousPage}
           disabled={currentPage === 0}
         >
-          <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />
+          <ChevronLeftIcon 
+            // className="h-4 w-4"
+            style={{
+              height: '1rem',
+              width: '1rem'
+            }}
+            aria-hidden="true"
+          />
         </Button>
         <Button
           suppressHydrationWarning
@@ -89,7 +120,14 @@ const TimelineView = ({
           onClick={handleNextPage}
           disabled={endIndex >= sortedKeys.length}
         >
-          <ChevronRightIcon className="h-4 w-4" aria-hidden="true" />
+          <ChevronRightIcon
+            // className="h-4 w-4"
+            style={{
+              height: '1rem',
+              width: '1rem'
+            }}
+            aria-hidden="true"
+          />
         </Button>
       </div>
     </div>
@@ -97,42 +135,3 @@ const TimelineView = ({
 };
 
 export default TimelineView;
-
-// const ExportedComponents = {
-//   TestComponentOne: ({ type, data }) => {
-//     return (
-//       <>
-//         Test component 1
-//       </>
-//     )
-//   },
-
-//   TestComponentTwo: ({ type, data }) => {
-//     return (
-//       <>
-//         Test component 2
-//       </>
-//     )
-//   },
-
-//   TimelineView,
-// }
-
-// const Component = ({ type, data }) => {
-//   console.log('Type in mf: ', type);
-//   const ComponentToRender = ExportedComponents[type] ?? (() => <>Unkown component</>);
-
-//   return (
-//     <>
-//       Hello World
-
-//       <ComponentToRender data={data} />
-// {/* 
-//       { type == 'one'  && <TestComponentOne data={data}/>}
-//       { type == 'two' && <TestComponentTwo data={data}/>}
-//       { type == 'TimelineView' && <TimelineView data={data} /> } */}
-//     </>
-//   )
-// };
-
-// export default Component;
