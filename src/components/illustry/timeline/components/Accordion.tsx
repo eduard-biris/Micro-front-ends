@@ -5,6 +5,8 @@ import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { cn } from '../utils/utils';
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react';
 
+import './Accordion.css';
+
 const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = forwardRef<
@@ -27,15 +29,18 @@ const AccordionTrigger = forwardRef<
   <AccordionPrimitive.Header className="flex" suppressHydrationWarning>
     <AccordionPrimitive.Trigger
       ref={ref}
-      className={cn(
-        'flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
-        className
-      )}
+      className={
+        // 'flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
+        'accordion-first-class'
+      }
       {...props}
       suppressHydrationWarning
     >
       {children}
-      <ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+      <ChevronDownIcon
+        // className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200"
+        className={'accordion-second-class'}
+      />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -47,10 +52,10 @@ const AccordionContent = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className={cn(
-      'overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
-      className
-    )}
+    className={
+      // 'overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
+      'accordion-third-class'
+    }
     suppressHydrationWarning
     {...props}
   >

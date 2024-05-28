@@ -66,12 +66,34 @@ const AxisChartView = ({ data, type, legend }: AxisChartProp) => {
   };
   return (
     <>
-      <div className="relative mt-[4%] flex flex-col items-center">
+      <div 
+        // className="relative mt-[4%] flex flex-col items-center"
+        style={{
+          position: 'relative',
+          marginTop: '4%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
+      >
         {legend && (
           <Legend legendData={computeLegendColors(data, colors as string[])} />
         )}
-        <div className="w-full mt-4 h-[80vh]">
-          <ReactEcharts option={option} className="w-full h-full" />
+        <div 
+          // className="w-full mt-4 h-[80vh]"
+          style={{
+            width: '100%',
+            height: '80vh',
+            marginTop: '1rem'
+          }}
+        >
+          <ReactEcharts option={option} 
+            // className="w-full h-full" 
+            style={{
+              width: '100%',
+              height: '100%'
+            }}
+          />
         </div>
       </div>
     </>

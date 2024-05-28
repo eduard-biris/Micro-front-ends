@@ -56,10 +56,31 @@ const PieView = ({ data, legend }: PieProp) => {
     ]
   };
   return (
-    <div className="relative mt-[4%] flex flex-col items-center">
+    <div style={{
+      position: 'relative',
+      marginTop: '4%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }} 
+    //className="relative mt-[4%] flex flex-col items-center"
+    >
       {legend && <Legend legendData={computeLegendColors(data, colors)} />}
-      <div className="w-full mt-4 h-[80vh]">
-        <ReactEcharts option={option} className="w-full h-full" />
+      <div 
+        style={{
+          width: '100%',
+          marginTop: '1rem',
+          height: '80vh'
+        }}
+        // className="w-full mt-4 h-[80vh]"
+      >
+        <ReactEcharts option={option} 
+          style={{
+            width: '100%',
+            height: '100%'
+          }}
+          // className="w-full h-full"
+        />
       </div>
     </div>
   );

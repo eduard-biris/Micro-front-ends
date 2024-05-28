@@ -2,7 +2,7 @@ import { PieChartData } from 'types/visualizations';
 import { WithLegend, WithOptions } from '../../commons/types/types';
 import React, { lazy, Dispatch, SetStateAction, useState } from 'react';
 import { visualizationTypesEnum } from '../../commons/validation/visualizations';
-import CollapsableSearchBar from '../components/collapsable-searchbar';
+import CollapsableSearchBar from '../../commons/searchbar/collapsable-searchbar';
 
 interface FilteredPieChartShellProp extends WithLegend, WithOptions {
   data: PieChartData

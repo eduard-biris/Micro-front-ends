@@ -1,0 +1,29 @@
+.timeline-accordion-first-class {
+    text-transform: capitalize; /* capitalize */
+    font-weight: 500; /* font-medium */
+    color: #4A5568; /* text-gray-700 */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .timeline-accordion-first-class {
+      color: #A0AEC0; /* dark:text-gray-400 */
+    }
+  }
+  
+  @media (max-width: 640px) { /* xs breakpoint (640px) */
+    .timeline-accordion-first-class {
+      font-size: 0.875rem; /* text-sm */
+    }
+  }
+
+  .timeline-accordion-second-class {
+    list-style-type: disc; /* list-disc */
+    margin-left: 1rem; /* ml-4 (margin-left: 1rem) */
+    color: #4A5568; /* text-gray-700 */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .timeline-accordion-second-class {
+      color: #A0AEC0; /* dark:text-gray-400 */
+    }
+  }

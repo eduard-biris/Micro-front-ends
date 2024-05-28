@@ -75,16 +75,32 @@ const CalendarGraphView = ({ categories, calendar, legend }: CalendarGraphProp) 
   };
   const canvasHeight = `${computedCalendar.calendar.length * 35}vh`;
   return (
-    <div className="relative mt-[4%] flex flex-col items-center">
+    <div 
+      // className="relative mt-[4%] flex flex-col items-center"
+      style={{
+        position: 'relative',
+        marginTop: '4%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
       {legend && (
         <Legend legendData={computeLegendColors(categories, colors)} />
       )}
-      <div className="w-full h-full">
+      <div 
+        // className="w-full h-full"
+        style={{
+          width: '100%',
+          height: '100%'
+        }}
+      >
         <ReactEcharts
           option={option}
-          className="w-full sm:h-120 lg:h-160"
+          // className="w-full sm:h-120 lg:h-160"
           style={{
-            height: canvasHeight
+            height: canvasHeight,
+            width: '100%'
           }}
         />
       </div>

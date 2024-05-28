@@ -1,0 +1,23 @@
+.timeline-dialog-first-class {
+    color: #4A5568; /* text-gray-700 */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .timeline-dialog-first-class {
+      color: #A0AEC0; /* dark:text-gray-400 */
+    }
+  }
+
+
+  .timeline-dialog-second-class {
+    text-transform: capitalize; /* capitalize */
+    color: #4A5568; /* text-gray-700 */
+    margin-left: 0.5rem; /* ml-2 */
+    margin-bottom: 0.5rem; /* mb-2 */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .timeline-dialog-second-class {
+      color: #A0AEC0; /* dark:text-gray-400 */
+    }
+  }
